@@ -5,7 +5,13 @@ public class MyLLTester
   public static void main(String [] args)
   {
     MyLinkedList list = new MyLinkedList();
+
+    System.out.println("List size:" + list.size() + "\n");
+
+    System.out.println("List empty? " + list.isEmpty() + "\n");
+
     System.out.println("Original list: \n" + list.toString());
+
     list.add("one");
     System.out.println("Item added. New list: \n" + list.toString());
     list.add("two");
@@ -27,6 +33,10 @@ public class MyLLTester
     list.addFirst("ten");
     System.out.println("Item added at beginning. New list: \n" + list.toString());
 
+    System.out.println("List size:" + list.size() + "\n");
+
+    System.out.println("List empty? " + list.isEmpty() + "\n");
+    
     list.set(2, "eleven");
     System.out.println("Item changed. New list: \n" + list.toString());
 
@@ -41,7 +51,7 @@ public class MyLLTester
 
     System.out.println("List size:" + list.size() + "\n");
 
-    System.out.println("List empty? " + list.isEmpty());
+    System.out.println("List empty? " + list.isEmpty() + "\n");
 
     list.removeLast();
     System.out.println("Last item removed. New list: \n" + list.toString());

@@ -2,7 +2,7 @@
 //MyLinkedList class with methods to add remove and change items 
 public class MyLinkedList
 {
-    public ListNode head;
+    private ListNode head;
     public MyLinkedList(){
         head = null;
     }//end MyLinkedList
@@ -40,12 +40,7 @@ public class MyLinkedList
 
     // adds a ListNode element to the beginning of the LinkedList
     public boolean addFirst(Object obj){
-        if (head == null){
-            head = new ListNode(obj, null);
-        }//end if
-        else{
-            head = new ListNode(obj, head);
-        }//end else
+        head = new ListNode(obj, head);
         return true;
     }//end addFirst
 
@@ -61,6 +56,9 @@ public class MyLinkedList
 
     // changes the information stored as the value of the ListNode element at the given position
     public Object set(int i, Object obj){
+        if (i < 0){
+            throw new IndexOutOfBoundsException();
+        }
         ListNode temp = head;
         int count = 0;
         Object old = new Object();
@@ -68,16 +66,19 @@ public class MyLinkedList
             if (count == i){
                 old = temp.getValue();
                 temp.setValue(obj);
-                break;
+                return old;
             }//end if
             count++;
             temp = temp.getNext();
         }//end while
-        return old;
+        throw new IndexOutOfBoundsException();
     }//end set
 
     // returns the information stored as the value of the ListNode element at a given position
     public Object get(int i){
+        if (i < 0){
+            throw new IndexOutOfBoundsException();
+        }
         ListNode temp = head;
         int count = 0;
         while (temp != null){
@@ -87,11 +88,12 @@ public class MyLinkedList
             count++;
             temp = temp.getNext();
         }//end while
-        return null;
+        throw new IndexOutOfBoundsException();
     }//end get
 
     // removes the ListNode element at the given position leaving the rest of the LinkedList intact
     public Object remove(int i){
+        //throw exception
         if (i > size() - 1){
             return null;
         }//end if
