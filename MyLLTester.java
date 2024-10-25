@@ -70,8 +70,17 @@ public class MyLLTester
     list.removeLast();
     System.out.println("Last item removed. New list: \n" + list.toString());
 
-    list.remove(100);
-    System.out.println("Item removed. New list: \n" + list.toString());
+    System.out.println("List size:" + list.size() + "\n");
+
+    System.out.println("List empty? " + list.isEmpty() + "\n");
+    
+    list.add("drew");
+    System.out.println("Item added. New list: \n" + list.toString());
+
+    list.set(0, "banana");
+    System.out.println("Item changed. New list: \n" + list.toString());
+
+    System.out.println("item 3: " + list.get(0) + "\n");
 
     System.out.println("List size:" + list.size() + "\n");
 

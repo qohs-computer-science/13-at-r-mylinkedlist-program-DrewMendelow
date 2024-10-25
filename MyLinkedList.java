@@ -93,9 +93,8 @@ public class MyLinkedList
 
     // removes the ListNode element at the given position leaving the rest of the LinkedList intact
     public Object remove(int i){
-        //throw exception
-        if (i > size() - 1){
-            return null;
+        if (i > size() - 1 || i < 0){
+            throw new IndexOutOfBoundsException();
         }//end if
         Object val = new Object();
         if (i == 0){
